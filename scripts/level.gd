@@ -11,6 +11,9 @@ extends Node
 @onready var player_two_particles = $PlayerTwo/CPUParticles2D
 @onready var player_swoosh_sfx = $PlayerOne/Swoosh
 @onready var pathways = $Pathways
+@onready var tutorial = $Tutorial
+@onready var tutorial_page_1 = $Tutorial/Page1
+@onready var tutorial_page_2 = $Tutorial/Page2
 var block = false  # Prevent player movement while swapping positions
 
 
@@ -65,3 +68,11 @@ func _physics_process(_delta):
 		player_two.global_position = player_one_pos
 	else:
 		block = false
+
+
+func _on_done_pressed():
+	if tutorial_page_1.visible:
+		tutorial_page_1.hide()
+		tutorial_page_2.show()
+	else:
+		tutorial.hide()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bu0leoauaamu7"]
+[gd_scene load_steps=22 format=3 uid="uid://bu0leoauaamu7"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_hwa20"]
 [ext_resource type="Texture2D" uid="uid://n4n8kw0mqh6v" path="res://assets/tilesheet.png" id="2_s3mh5"]
@@ -7,6 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://crbyg22usjhey" path="res://scenes/player_one.tscn" id="5_jdq4v"]
 [ext_resource type="PackedScene" uid="uid://dpoyfb0mutyc" path="res://scenes/player_two.tscn" id="6_2p3ew"]
 [ext_resource type="PackedScene" uid="uid://wyo024xmo4ob" path="res://scenes/breakable_box.tscn" id="7_o85b2"]
+[ext_resource type="Theme" uid="uid://dqq77rxoecpnf" path="res://assets/theme.tres" id="8_3ovu3"]
+[ext_resource type="Texture2D" uid="uid://cih5get8jhfb5" path="res://assets/player_one.png" id="9_kkcf3"]
+[ext_resource type="Texture2D" uid="uid://dnp6jb2vb1epp" path="res://assets/player_1_pathway.png" id="10_rrf7d"]
+[ext_resource type="Texture2D" uid="uid://c48cko3genvol" path="res://assets/player_two.png" id="11_ghh08"]
+[ext_resource type="Texture2D" uid="uid://dckgaa7nfwi5v" path="res://assets/breakable_box.png" id="12_ar22j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ykib7"]
 texture = ExtResource("2_s3mh5")
@@ -248,3 +253,239 @@ shape = SubResource("RectangleShape2D_uno5h")
 
 [node name="BreakableBox" parent="." instance=ExtResource("7_o85b2")]
 position = Vector2(95, 420)
+
+[node name="Tutorial" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 640.0
+theme = ExtResource("8_3ovu3")
+
+[node name="BG" type="ColorRect" parent="Tutorial"]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 640.0
+
+[node name="HowToPlay" type="Label" parent="Tutorial"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -123.5
+offset_top = 23.0
+offset_right = 123.5
+offset_bottom = 76.0
+grow_horizontal = 2
+text = "How to play:"
+
+[node name="Page1" type="Control" parent="Tutorial"]
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 640.0
+
+[node name="Controls" type="Control" parent="Tutorial/Page1"]
+anchors_preset = 0
+offset_top = 114.0
+offset_right = 640.0
+offset_bottom = 329.0
+
+[node name="Move1" type="Label" parent="Tutorial/Page1/Controls"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 27.0
+offset_top = -109.5
+offset_right = 138.0
+offset_bottom = -56.5
+grow_vertical = 2
+text = "Move"
+
+[node name="PlayerOne" type="Sprite2D" parent="Tutorial/Page1/Controls"]
+position = Vector2(202, 27)
+scale = Vector2(2.04762, 2.04762)
+texture = ExtResource("9_kkcf3")
+
+[node name="WASD" type="Label" parent="Tutorial/Page1/Controls"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -372.0
+offset_top = -106.5
+offset_right = -145.0
+offset_bottom = -53.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "with WASD"
+
+[node name="Move2" type="Label" parent="Tutorial/Page1/Controls"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 27.0
+offset_top = 4.5
+offset_right = 138.0
+offset_bottom = 57.5
+grow_vertical = 2
+text = "Move"
+
+[node name="PlayerTwo" type="Sprite2D" parent="Tutorial/Page1/Controls"]
+position = Vector2(202, 138)
+scale = Vector2(2.048, 2.048)
+texture = ExtResource("11_ghh08")
+
+[node name="Arrows" type="Label" parent="Tutorial/Page1/Controls"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -372.0
+offset_top = 3.5
+offset_right = -41.0
+offset_bottom = 56.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "with Arrow Keys"
+
+[node name="PlayerOne" type="Control" parent="Tutorial/Page1"]
+anchors_preset = 0
+offset_top = 272.0
+offset_right = 640.0
+offset_bottom = 421.0
+
+[node name="PlayerOne" type="Sprite2D" parent="Tutorial/Page1/PlayerOne"]
+position = Vector2(69, 78)
+scale = Vector2(2.04762, 2.04762)
+texture = ExtResource("9_kkcf3")
+
+[node name="CanWalkOver" type="Label" parent="Tutorial/Page1/PlayerOne"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.0
+offset_top = -26.5
+offset_right = 99.0
+offset_bottom = 26.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "can walk over"
+
+[node name="Pathway" type="Sprite2D" parent="Tutorial/Page1/PlayerOne"]
+position = Vector2(491, 81)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("10_rrf7d")
+
+[node name="PlayerTwo" type="Control" parent="Tutorial/Page1"]
+anchors_preset = 0
+offset_top = 400.0
+offset_right = 640.0
+offset_bottom = 569.0
+
+[node name="PlayerTwo" type="Sprite2D" parent="Tutorial/Page1/PlayerTwo"]
+position = Vector2(69, 82)
+scale = Vector2(2.048, 2.048)
+texture = ExtResource("11_ghh08")
+
+[node name="CanBreak" type="Label" parent="Tutorial/Page1/PlayerTwo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -188.0
+offset_top = -27.5
+offset_right = 11.0
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "can break"
+
+[node name="Sprite2D" type="Sprite2D" parent="Tutorial/Page1/PlayerTwo"]
+position = Vector2(400, 83)
+scale = Vector2(2.048, 2.048)
+texture = ExtResource("12_ar22j")
+
+[node name="WithE" type="Label" parent="Tutorial/Page1/PlayerTwo"]
+layout_mode = 0
+offset_left = 465.0
+offset_top = 53.0
+offset_right = 591.0
+offset_bottom = 106.0
+text = "with E"
+
+[node name="Page2" type="Control" parent="Tutorial"]
+visible = false
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 640.0
+
+[node name="Reverse" type="Control" parent="Tutorial/Page2"]
+anchors_preset = 0
+offset_top = 34.0
+offset_right = 640.0
+offset_bottom = 297.0
+
+[node name="PressR" type="Label" parent="Tutorial/Page2/Reverse"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 27.0
+offset_top = -51.5
+offset_right = 392.0
+offset_bottom = 1.5
+grow_vertical = 2
+text = "Press R to reverse"
+
+[node name="PlayerOne" type="Sprite2D" parent="Tutorial/Page2/Reverse"]
+position = Vector2(452, 109)
+scale = Vector2(2.04762, 2.04762)
+texture = ExtResource("9_kkcf3")
+
+[node name="And" type="Label" parent="Tutorial/Page2/Reverse"]
+layout_mode = 0
+offset_left = 511.0
+offset_top = 80.0
+offset_right = 587.0
+offset_bottom = 133.0
+text = "and"
+
+[node name="PlayerTwo" type="Sprite2D" parent="Tutorial/Page2/Reverse"]
+position = Vector2(69, 199)
+scale = Vector2(2.048, 2.048)
+texture = ExtResource("11_ghh08")
+
+[node name="Positions" type="Label" parent="Tutorial/Page2/Reverse"]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 175.0
+offset_right = 342.0
+offset_bottom = 228.0
+text = "'s positions"
+
+[node name="Done" type="Button" parent="Tutorial"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -91.0
+offset_right = 60.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Done"
+
+[connection signal="pressed" from="Tutorial/Done" to="." method="_on_done_pressed"]
