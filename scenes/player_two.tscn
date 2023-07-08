@@ -16,3 +16,15 @@ texture = ExtResource("1_rop01")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_0gkoj")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 64
+lifetime = 0.15
+one_shot = true
+emission_shape = 1
+emission_sphere_radius = 25.0
+gravity = Vector2(0, -980)
+scale_amount_min = 5.0
+scale_amount_max = 5.0
+color = Color(0.568627, 0.47451, 1, 1)

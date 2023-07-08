@@ -216,6 +216,7 @@ position = Vector2(95, 547)
 position = Vector2(450, 332)
 
 [node name="Pathway" parent="Pathways" instance=ExtResource("7_vo6uf")]
+position = Vector2(30, 20)
 
 [node name="PlayerOne" parent="." instance=ExtResource("2_h4qa4")]
 position = Vector2(99, 159)

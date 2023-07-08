@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://crbyg22usjhey"]
+[gd_scene load_steps=5 format=3 uid="uid://crbyg22usjhey"]
 
 [ext_resource type="Texture2D" uid="uid://cih5get8jhfb5" path="res://assets/player_one.png" id="1_4atwn"]
 [ext_resource type="Script" path="res://scripts/player_one.gd" id="1_qjpqf"]
+[ext_resource type="AudioStream" uid="uid://dqycbyou5w8dv" path="res://assets/sfx/swoosh.mp3" id="3_ycimb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0gkoj"]
 radius = 20.025
@@ -16,3 +17,19 @@ texture = ExtResource("1_4atwn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_0gkoj")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 64
+lifetime = 0.15
+one_shot = true
+emission_shape = 1
+emission_sphere_radius = 25.0
+gravity = Vector2(0, -980)
+scale_amount_min = 5.0
+scale_amount_max = 5.0
+color = Color(0.215686, 0.85098, 0.54902, 1)
+
+[node name="Swoosh" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ycimb")
+volume_db = 15.0

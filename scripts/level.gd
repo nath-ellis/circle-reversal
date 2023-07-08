@@ -7,6 +7,9 @@ extends Node
 @onready var player_two_hitbox = $PlayerTwo/CollisionShape2D
 @onready var player_one_goal_hitbox = $PlayerOneGoal/CollisionShape2D
 @onready var player_two_goal_hitbox = $PlayerTwoGoal/CollisionShape2D
+@onready var player_one_particles = $PlayerOne/CPUParticles2D
+@onready var player_two_particles = $PlayerTwo/CPUParticles2D
+@onready var player_swoosh_sfx = $PlayerOne/Swoosh
 @onready var pathways = $Pathways
 var block = false  # Prevent player movement while swapping positions
 
@@ -44,6 +47,11 @@ func _process(_delta):
 
 func _physics_process(_delta):
 	if Input.is_action_just_released("reverse"):
+		player_swoosh_sfx.playing = true
+		
+		player_one_particles.emitting = true
+		player_two_particles.emitting = true
+		
 		block = true
 		
 		enable_goal_collision()
