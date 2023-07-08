@@ -17,6 +17,12 @@ extends Node
 var block = false  # Prevent player movement while swapping positions
 
 
+func _ready():
+	# Hide tutorial on all levels past level one
+	if $".".name != "LevelOne":
+		tutorial.hide()
+
+
 func enable_goal_collision(player = 1):
 	if player == 1:
 		player_one_goal_hitbox.disabled = false
