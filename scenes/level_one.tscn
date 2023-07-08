@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bu0leoauaamu7"]
+[gd_scene load_steps=13 format=3 uid="uid://bu0leoauaamu7"]
 
-[ext_resource type="Texture2D" uid="uid://n4n8kw0mqh6v" path="res://assets/tilesheet.png" id="1_712un"]
+[ext_resource type="Texture2D" uid="uid://n4n8kw0mqh6v" path="res://assets/tilesheet.png" id="1_8ijiv"]
+[ext_resource type="PackedScene" uid="uid://crbyg22usjhey" path="res://scenes/player_one.tscn" id="2_h4qa4"]
+[ext_resource type="PackedScene" uid="uid://dpoyfb0mutyc" path="res://scenes/player_two.tscn" id="3_ik0aw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ykib7"]
-texture = ExtResource("1_712un")
+texture = ExtResource("1_8ijiv")
 texture_region_size = Vector2i(64, 64)
 0:0/next_alternative_id = 2
 0:0/0 = 0
@@ -84,7 +86,7 @@ tile_size = Vector2i(60, 60)
 sources/0 = SubResource("TileSetAtlasSource_ykib7")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jb2wj"]
-texture = ExtResource("1_712un")
+texture = ExtResource("1_8ijiv")
 36:0/size_in_atlas = Vector2i(4, 4)
 36:0/0 = 0
 40:0/size_in_atlas = Vector2i(4, 2)
@@ -174,7 +176,22 @@ texture = ExtResource("1_712un")
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_jb2wj")
 
-[node name="Game" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qw34v"]
+size = Vector2(640, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iyyux"]
+size = Vector2(20, 600)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_30ccm"]
+size = Vector2(640, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_obv34"]
+size = Vector2(20, 600)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uno5h"]
+size = Vector2(118, 600)
+
+[node name="LevelOne" type="Node2D"]
 
 [node name="Floor" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_cu3wh")
@@ -184,3 +201,31 @@ layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 65537, 0, 0, 65536, 0, 0,
 [node name="Decor" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_hfpwb")
 format = 2
+
+[node name="PlayerOne" parent="." instance=ExtResource("2_h4qa4")]
+position = Vector2(90, 152)
+
+[node name="PlayerTwo" parent="." instance=ExtResource("3_ik0aw")]
+position = Vector2(452, 211)
+
+[node name="Borders" type="CharacterBody2D" parent="."]
+
+[node name="TopBorder" type="CollisionShape2D" parent="Borders"]
+position = Vector2(300, -10)
+shape = SubResource("RectangleShape2D_qw34v")
+
+[node name="LeftBorder" type="CollisionShape2D" parent="Borders"]
+position = Vector2(-10, 300)
+shape = SubResource("RectangleShape2D_iyyux")
+
+[node name="RightBorder" type="CollisionShape2D" parent="Borders"]
+position = Vector2(300, 610)
+shape = SubResource("RectangleShape2D_30ccm")
+
+[node name="BottomBorder" type="CollisionShape2D" parent="Borders"]
+position = Vector2(610, 300)
+shape = SubResource("RectangleShape2D_obv34")
+
+[node name="MiddleBorder" type="CollisionShape2D" parent="Borders"]
+position = Vector2(300, 300)
+shape = SubResource("RectangleShape2D_uno5h")
