@@ -63,6 +63,7 @@ func _physics_process(_delta):
 		
 		block = true
 		
+		# Renable collisions
 		enable_goal_collision()
 		enable_goal_collision(2)
 		enable_pathway_collision()
