@@ -1,0 +1,77 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://dqq77rxoecpnf"]
+
+[ext_resource type="FontFile" uid="uid://ddhkcn6evvmag" path="res://assets/just_sans_bold.otf" id="1_itp12"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qfptl"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.568627, 0.47451, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w5w0n"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.215686, 0.85098, 0.54902, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gh07j"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nto5u"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.568627, 0.47451, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 3.0
+
+[resource]
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/constants/outline_size = 8
+Button/font_sizes/font_size = 40
+Button/fonts/font = ExtResource("1_itp12")
+Button/styles/focus = SubResource("StyleBoxFlat_qfptl")
+Button/styles/hover = SubResource("StyleBoxFlat_w5w0n")
+Button/styles/normal = SubResource("StyleBoxFlat_gh07j")
+Button/styles/pressed = SubResource("StyleBoxFlat_nto5u")
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 8
+Label/font_sizes/font_size = 40
+Label/fonts/font = ExtResource("1_itp12")
