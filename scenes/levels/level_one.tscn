@@ -302,7 +302,6 @@ theme = ExtResource("8_3ovu3")
 text = "1"
 
 [node name="Tutorial" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 640.0
