@@ -1,8 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://bu0leoauaamu7"]
+[gd_scene load_steps=15 format=3 uid="uid://bu0leoauaamu7"]
 
 [ext_resource type="Texture2D" uid="uid://n4n8kw0mqh6v" path="res://assets/tilesheet.png" id="1_8ijiv"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_821es"]
 [ext_resource type="PackedScene" uid="uid://crbyg22usjhey" path="res://scenes/player_one.tscn" id="2_h4qa4"]
 [ext_resource type="PackedScene" uid="uid://dpoyfb0mutyc" path="res://scenes/player_two.tscn" id="3_ik0aw"]
+[ext_resource type="PackedScene" uid="uid://bihfuqjcvf5e4" path="res://scenes/goal.tscn" id="4_qfry1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ykib7"]
 texture = ExtResource("1_8ijiv")
@@ -192,6 +194,7 @@ size = Vector2(20, 600)
 size = Vector2(118, 600)
 
 [node name="LevelOne" type="Node2D"]
+script = ExtResource("1_821es")
 
 [node name="Floor" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_cu3wh")
@@ -202,11 +205,17 @@ layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 65537, 0, 0, 65536, 0, 0,
 tile_set = SubResource("TileSet_hfpwb")
 format = 2
 
+[node name="PlayerOneGoal" parent="." instance=ExtResource("4_qfry1")]
+position = Vector2(509, 512)
+
+[node name="PlayerTwoGoal" parent="." instance=ExtResource("4_qfry1")]
+position = Vector2(88, 510)
+
 [node name="PlayerOne" parent="." instance=ExtResource("2_h4qa4")]
-position = Vector2(90, 152)
+position = Vector2(89, 212)
 
 [node name="PlayerTwo" parent="." instance=ExtResource("3_ik0aw")]
-position = Vector2(452, 211)
+position = Vector2(452, 150)
 
 [node name="Borders" type="CharacterBody2D" parent="."]
 
