@@ -3,6 +3,8 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 
+var collider
+
 
 func _physics_process(delta):
 	if not get_parent().block:
@@ -23,9 +25,15 @@ func _physics_process(delta):
 		var col = move_and_collide(vel * delta)
 		
 		if col != null:
-			var collider = col.get_collider()
+			collider = col.get_collider()
 			
 			if collider.name == "PlayerOneGoal":
 				get_parent().call("disable_goal_collision")
 			else:
 				get_parent().call("enable_goal_collision")
+			
+			# Disable/enable collision on pathways
+			if "Pathway" in collider.name:
+				get_parent().call("disable_pathway_collision")
+			else:
+				get_parent().call("enable_pathway_collision")
