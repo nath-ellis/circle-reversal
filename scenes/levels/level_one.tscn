@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bu0leoauaamu7"]
+[gd_scene load_steps=24 format=3 uid="uid://bu0leoauaamu7"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_hwa20"]
 [ext_resource type="Texture2D" uid="uid://n4n8kw0mqh6v" path="res://assets/tilesheet.png" id="2_s3mh5"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://dnp6jb2vb1epp" path="res://assets/player_1_pathway.png" id="10_rrf7d"]
 [ext_resource type="Texture2D" uid="uid://c48cko3genvol" path="res://assets/player_two.png" id="11_ghh08"]
 [ext_resource type="Texture2D" uid="uid://dckgaa7nfwi5v" path="res://assets/breakable_box.png" id="12_ar22j"]
+[ext_resource type="Texture2D" uid="uid://b2lnqenbbnt4x" path="res://assets/goal_player_one.png" id="13_psukn"]
+[ext_resource type="Texture2D" uid="uid://d365ma6pya466" path="res://assets/goal_player_two.png" id="14_8fj7l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ykib7"]
 texture = ExtResource("2_s3mh5")
@@ -255,6 +257,7 @@ shape = SubResource("RectangleShape2D_uno5h")
 position = Vector2(95, 420)
 
 [node name="Tutorial" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 640.0
@@ -472,6 +475,66 @@ offset_top = 175.0
 offset_right = 342.0
 offset_bottom = 228.0
 text = "'s positions"
+
+[node name="Goal" type="Control" parent="Tutorial/Page2"]
+anchors_preset = 0
+offset_top = 315.0
+offset_right = 640.0
+offset_bottom = 516.0
+
+[node name="Get" type="Label" parent="Tutorial/Page2/Goal"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 27.0
+offset_top = -80.5
+offset_right = 99.0
+offset_bottom = -27.5
+grow_vertical = 2
+text = "Get"
+
+[node name="PlayerOne" type="Sprite2D" parent="Tutorial/Page2/Goal"]
+position = Vector2(164, 47)
+scale = Vector2(2.04762, 2.04762)
+texture = ExtResource("9_kkcf3")
+
+[node name="To1" type="Label" parent="Tutorial/Page2/Goal"]
+offset_left = 222.0
+offset_top = 20.0
+offset_right = 265.0
+offset_bottom = 73.0
+text = "to"
+
+[node name="PlayerOneGoal" type="Sprite2D" parent="Tutorial/Page2/Goal"]
+position = Vector2(324, 49)
+scale = Vector2(2, 2)
+texture = ExtResource("13_psukn")
+
+[node name="And" type="Label" parent="Tutorial/Page2/Goal"]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 20.0
+offset_right = 460.0
+offset_bottom = 73.0
+text = "and"
+
+[node name="PlayerTwo" type="Sprite2D" parent="Tutorial/Page2/Goal"]
+position = Vector2(523, 47)
+scale = Vector2(2.048, 2.048)
+texture = ExtResource("11_ghh08")
+
+[node name="To2" type="Label" parent="Tutorial/Page2/Goal"]
+offset_left = 27.0
+offset_top = 113.0
+offset_right = 70.0
+offset_bottom = 166.0
+text = "to"
+
+[node name="PlayerTwoGoal" type="Sprite2D" parent="Tutorial/Page2/Goal"]
+position = Vector2(127, 143)
+scale = Vector2(2, 2)
+texture = ExtResource("14_8fj7l")
 
 [node name="Done" type="Button" parent="Tutorial"]
 layout_mode = 1
