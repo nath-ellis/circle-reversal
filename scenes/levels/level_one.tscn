@@ -1,15 +1,15 @@
 [gd_scene load_steps=17 format=3 uid="uid://bu0leoauaamu7"]
 
-[ext_resource type="Texture2D" uid="uid://n4n8kw0mqh6v" path="res://assets/tilesheet.png" id="1_8ijiv"]
-[ext_resource type="Script" path="res://scripts/level.gd" id="1_821es"]
-[ext_resource type="PackedScene" uid="uid://crbyg22usjhey" path="res://scenes/player_one.tscn" id="2_h4qa4"]
-[ext_resource type="PackedScene" uid="uid://dpoyfb0mutyc" path="res://scenes/player_two.tscn" id="3_ik0aw"]
-[ext_resource type="PackedScene" uid="uid://bihfuqjcvf5e4" path="res://scenes/goal.tscn" id="4_qfry1"]
-[ext_resource type="PackedScene" uid="uid://wyo024xmo4ob" path="res://scenes/breakable_box.tscn" id="6_u7dju"]
-[ext_resource type="PackedScene" uid="uid://ddc48a2uqc38l" path="res://scenes/pathway.tscn" id="7_vo6uf"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_hwa20"]
+[ext_resource type="Texture2D" uid="uid://n4n8kw0mqh6v" path="res://assets/tilesheet.png" id="2_s3mh5"]
+[ext_resource type="PackedScene" uid="uid://bihfuqjcvf5e4" path="res://scenes/goal.tscn" id="3_wekco"]
+[ext_resource type="PackedScene" uid="uid://ddc48a2uqc38l" path="res://scenes/pathway.tscn" id="4_aog47"]
+[ext_resource type="PackedScene" uid="uid://crbyg22usjhey" path="res://scenes/player_one.tscn" id="5_jdq4v"]
+[ext_resource type="PackedScene" uid="uid://dpoyfb0mutyc" path="res://scenes/player_two.tscn" id="6_2p3ew"]
+[ext_resource type="PackedScene" uid="uid://wyo024xmo4ob" path="res://scenes/breakable_box.tscn" id="7_o85b2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ykib7"]
-texture = ExtResource("1_8ijiv")
+texture = ExtResource("2_s3mh5")
 texture_region_size = Vector2i(64, 64)
 0:0/next_alternative_id = 2
 0:0/0 = 0
@@ -90,7 +90,7 @@ tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_ykib7")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jb2wj"]
-texture = ExtResource("1_8ijiv")
+texture = ExtResource("2_s3mh5")
 36:0/size_in_atlas = Vector2i(4, 4)
 36:0/0 = 0
 40:0/size_in_atlas = Vector2i(4, 2)
@@ -195,7 +195,7 @@ size = Vector2(20, 660)
 size = Vector2(126, 640)
 
 [node name="LevelOne" type="Node2D"]
-script = ExtResource("1_821es")
+script = ExtResource("1_hwa20")
 
 [node name="Floor" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_cu3wh")
@@ -206,22 +206,22 @@ layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 65537, 0, 0, 65536, 0, 0,
 tile_set = SubResource("TileSet_hfpwb")
 format = 2
 
-[node name="PlayerOneGoal" parent="." instance=ExtResource("4_qfry1")]
+[node name="PlayerOneGoal" parent="." instance=ExtResource("3_wekco")]
 position = Vector2(544, 545)
 
-[node name="PlayerTwoGoal" parent="." instance=ExtResource("4_qfry1")]
+[node name="PlayerTwoGoal" parent="." instance=ExtResource("3_wekco")]
 position = Vector2(95, 547)
 
 [node name="Pathways" type="Node2D" parent="."]
 position = Vector2(450, 332)
 
-[node name="Pathway" parent="Pathways" instance=ExtResource("7_vo6uf")]
+[node name="Pathway" parent="Pathways" instance=ExtResource("4_aog47")]
 position = Vector2(30, 20)
 
-[node name="PlayerOne" parent="." instance=ExtResource("2_h4qa4")]
+[node name="PlayerOne" parent="." instance=ExtResource("5_jdq4v")]
 position = Vector2(99, 159)
 
-[node name="PlayerTwo" parent="." instance=ExtResource("3_ik0aw")]
+[node name="PlayerTwo" parent="." instance=ExtResource("6_2p3ew")]
 position = Vector2(479, 99)
 
 [node name="Borders" type="CharacterBody2D" parent="."]
@@ -246,5 +246,5 @@ shape = SubResource("RectangleShape2D_obv34")
 position = Vector2(320, 320)
 shape = SubResource("RectangleShape2D_uno5h")
 
-[node name="BreakableBox" parent="." instance=ExtResource("6_u7dju")]
+[node name="BreakableBox" parent="." instance=ExtResource("7_o85b2")]
 position = Vector2(95, 420)
