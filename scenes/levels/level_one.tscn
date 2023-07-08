@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bu0leoauaamu7"]
+[gd_scene load_steps=26 format=3 uid="uid://bu0leoauaamu7"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_hwa20"]
 [ext_resource type="Texture2D" uid="uid://n4n8kw0mqh6v" path="res://assets/tilesheet.png" id="2_s3mh5"]
@@ -201,13 +201,19 @@ size = Vector2(20, 660)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uno5h"]
 size = Vector2(126, 640)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_42kf2"]
+size = Vector2(64, 190)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cpety"]
+size = Vector2(127, 190.5)
+
 [node name="LevelOne" type="Node2D"]
 script = ExtResource("1_hwa20")
 
 [node name="Floor" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_cu3wh")
 format = 2
-layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 65537, 0, 0, 65536, 0, 0, 2, 0, 0, 9, 0, 0, 8, 0, 0, 7, 0, 0, 6, 0, 0, 3, 0, 0, 65539, 0, 0, 65538, 0, 0, 131074, 0, 0, 131075, 0, 0, 131073, 0, 0, 131072, 0, 0, 196608, 0, 0, 196609, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 196611, 0, 0, 196610, 0, 0, 262144, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327680, 0, 0, 393216, 0, 0, 458752, 0, 0, 524288, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 524291, 0, 0, 458755, 0, 0, 393218, 0, 0, 458754, 0, 0, 524290, 0, 0, 524289, 0, 0, 458753, 0, 0, 393217, 0, 0, 393219, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 131081, 0, 0, 131080, 0, 0, 131079, 0, 0, 131078, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 262153, 0, 0, 262152, 0, 0, 262151, 0, 0, 327686, 0, 0, 262150, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 393225, 0, 0, 393224, 0, 0, 393223, 0, 0, 393222, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 524296, 0, 0, 524297, 0, 0, 589833, 0, 0, 589832, 0, 0, 589831, 0, 0, 589830, 0, 0, 524294, 0, 0, 524295, 0, 0, 458761, 0, 0, 589828, 458752, 1, 589829, 458752, 1, 524293, 458752, 1, 524292, 458752, 1, 458756, 458752, 1, 458757, 458752, 1, 393221, 458752, 1, 393220, 458752, 1, 327684, 458752, 1, 327685, 458752, 1, 262148, 458752, 1, 262149, 458752, 1, 196613, 458752, 1, 196612, 458752, 1, 131076, 458752, 1, 131077, 458752, 1, 65541, 458752, 1, 65540, 458752, 1, 4, 458752, 1, 5, 458752, 1)
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 65537, 0, 0, 65536, 0, 0, 2, 0, 0, 9, 0, 0, 8, 0, 0, 7, 0, 0, 6, 0, 0, 3, 0, 0, 65539, 0, 0, 65538, 0, 0, 131074, 0, 0, 131075, 0, 0, 131073, 0, 0, 131072, 0, 0, 196608, 0, 0, 196609, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 196611, 0, 0, 196610, 0, 0, 262144, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327680, 0, 0, 393216, 0, 0, 458752, 0, 0, 524288, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 524291, 0, 0, 458755, 0, 0, 393218, 0, 0, 458754, 0, 0, 524290, 0, 0, 524289, 0, 0, 458753, 0, 0, 393217, 0, 0, 393219, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 131081, 0, 0, 131080, 0, 0, 131079, 0, 0, 131078, 0, 0, 196614, 458752, 1, 196615, 0, 0, 196616, 458752, 1, 196617, 458752, 1, 262153, 458752, 1, 262152, 458752, 1, 262151, 0, 0, 327686, 458752, 1, 262150, 458752, 1, 327687, 0, 0, 327688, 458752, 1, 327689, 458752, 1, 393223, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 524296, 0, 0, 524297, 0, 0, 589833, 0, 0, 589832, 0, 0, 589831, 0, 0, 589830, 0, 0, 524294, 0, 0, 524295, 0, 0, 458761, 0, 0, 589828, 458752, 1, 589829, 458752, 1, 524293, 458752, 1, 524292, 458752, 1, 458756, 458752, 1, 458757, 458752, 1, 393221, 458752, 1, 393220, 458752, 1, 327684, 458752, 1, 327685, 458752, 1, 262148, 458752, 1, 262149, 458752, 1, 196613, 458752, 1, 196612, 458752, 1, 131076, 458752, 1, 131077, 458752, 1, 65541, 458752, 1, 65540, 458752, 1, 4, 458752, 1, 5, 458752, 1, 393222, 0, 0, 393224, 0, 0, 393225, 0, 0)
 
 [node name="Decor" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_hfpwb")
@@ -222,7 +228,13 @@ position = Vector2(95, 547)
 [node name="Pathways" type="Node2D" parent="."]
 position = Vector2(450, 332)
 
-[node name="Pathway" parent="Pathways" instance=ExtResource("4_aog47")]
+[node name="Pathway1" parent="Pathways" instance=ExtResource("4_aog47")]
+position = Vector2(30, -108)
+
+[node name="Pathway2" parent="Pathways" instance=ExtResource("4_aog47")]
+position = Vector2(30, -44)
+
+[node name="Pathway3" parent="Pathways" instance=ExtResource("4_aog47")]
 position = Vector2(30, 20)
 
 [node name="PlayerOne" parent="." instance=ExtResource("5_jdq4v")]
@@ -253,8 +265,41 @@ shape = SubResource("RectangleShape2D_obv34")
 position = Vector2(320, 320)
 shape = SubResource("RectangleShape2D_uno5h")
 
-[node name="BreakableBox" parent="." instance=ExtResource("7_o85b2")]
-position = Vector2(95, 420)
+[node name="PathwayBorderL" type="CollisionShape2D" parent="Borders"]
+position = Vector2(415, 288)
+shape = SubResource("RectangleShape2D_42kf2")
+
+[node name="PathwayBorderR" type="CollisionShape2D" parent="Borders"]
+position = Vector2(576.5, 287.75)
+shape = SubResource("RectangleShape2D_cpety")
+
+[node name="Boxes" type="Node2D" parent="."]
+
+[node name="BreakableBox1" parent="Boxes" instance=ExtResource("7_o85b2")]
+position = Vector2(22, 417)
+
+[node name="BreakableBox2" parent="Boxes" instance=ExtResource("7_o85b2")]
+position = Vector2(64, 404)
+
+[node name="BreakableBox3" parent="Boxes" instance=ExtResource("7_o85b2")]
+position = Vector2(106, 398)
+
+[node name="BreakableBox4" parent="Boxes" instance=ExtResource("7_o85b2")]
+position = Vector2(149, 404)
+
+[node name="BreakableBox5" parent="Boxes" instance=ExtResource("7_o85b2")]
+position = Vector2(192, 414)
+
+[node name="BreakableBox6" parent="Boxes" instance=ExtResource("7_o85b2")]
+position = Vector2(235, 418)
+
+[node name="LevelNumber" type="Label" parent="."]
+offset_left = 11.0
+offset_top = 5.0
+offset_right = 51.0
+offset_bottom = 58.0
+theme = ExtResource("8_3ovu3")
+text = "1"
 
 [node name="Tutorial" type="Control" parent="."]
 visible = false
