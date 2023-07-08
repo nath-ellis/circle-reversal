@@ -7,6 +7,8 @@
 radius = 20.025
 
 [node name="PlayerOne" type="CharacterBody2D"]
+motion_mode = 1
+slide_on_ceiling = false
 script = ExtResource("1_qjpqf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
