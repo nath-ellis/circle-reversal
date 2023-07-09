@@ -31,7 +31,3 @@ func _physics_process(delta):
 				get_parent().call("disable_goal_collision")
 			else:
 				get_parent().call("enable_goal_collision")
-			
-			# Disable collision on pathways if needed
-			if "Pathway" in collider.name:
-				get_parent().call("disable_pathway_collision")

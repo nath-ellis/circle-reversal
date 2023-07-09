@@ -7,6 +7,7 @@
 radius = 20.025
 
 [node name="PlayerTwo" type="CharacterBody2D"]
+collision_mask = 3
 motion_mode = 1
 slide_on_ceiling = false
 script = ExtResource("1_g6lyf")
