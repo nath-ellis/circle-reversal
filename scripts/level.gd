@@ -11,15 +11,8 @@ extends Node
 @onready var player_two_particles = $PlayerTwo/CPUParticles2D
 @onready var player_swoosh_sfx = $PlayerOne/Swoosh
 @onready var pathways = $Pathways
-@onready var tutorial = $Tutorial
 @onready var level_complete = $LevelComplete
 var block = false  # Prevent player movement while swapping positions
-
-
-func _ready():
-	# Hide tutorial on all levels past level one
-	if $".".name != "LevelOne":
-		tutorial.hide()
 
 
 func enable_goal_collision(player = 1):
