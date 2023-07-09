@@ -6,4 +6,4 @@ func _on_menu_pressed():
 
 
 func _on_github_pressed():
-	OS.shell_open("https://github.com/nath-ellis")
+	OS.shell_open("https://github.com/nath-ellis/circle-reversal")
