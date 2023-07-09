@@ -14,6 +14,7 @@ extends Node
 @onready var tutorial = $Tutorial
 @onready var tutorial_page_1 = $Tutorial/Page1
 @onready var tutorial_page_2 = $Tutorial/Page2
+@onready var level_complete = $LevelComplete
 var block = false  # Prevent player movement while swapping positions
 
 
@@ -51,7 +52,10 @@ func disable_pathway_collision():
 
 func _process(_delta):
 	if player_one_goal_hitbox.disabled and player_two_goal_hitbox.disabled:
-		print("Winner")
+		player_one_particles.emitting = true
+		player_two_particles.emitting = true
+		
+		level_complete.show()
 
 
 func _physics_process(_delta):
@@ -83,3 +87,5 @@ func _on_done_pressed():
 		tutorial_page_2.show()
 	else:
 		tutorial.hide()
+
+# TODO: Add a level complete screen where you can continue or exit

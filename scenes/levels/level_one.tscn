@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bu0leoauaamu7"]
+[gd_scene load_steps=27 format=3 uid="uid://bu0leoauaamu7"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_hwa20"]
 [ext_resource type="Texture2D" uid="uid://n4n8kw0mqh6v" path="res://assets/tilesheet.png" id="2_s3mh5"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dckgaa7nfwi5v" path="res://assets/breakable_box.png" id="12_ar22j"]
 [ext_resource type="Texture2D" uid="uid://b2lnqenbbnt4x" path="res://assets/goal_player_one.png" id="13_psukn"]
 [ext_resource type="Texture2D" uid="uid://d365ma6pya466" path="res://assets/goal_player_two.png" id="14_8fj7l"]
+[ext_resource type="PackedScene" uid="uid://bqvh3tjsttpgy" path="res://scenes/level_complete.tscn" id="15_irpru"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ykib7"]
 texture = ExtResource("2_s3mh5")
@@ -596,5 +597,12 @@ offset_bottom = -25.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Done"
+
+[node name="LevelComplete" parent="." instance=ExtResource("15_irpru")]
+visible = false
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 640.0
+offset_bottom = 640.0
 
 [connection signal="pressed" from="Tutorial/Done" to="." method="_on_done_pressed"]
