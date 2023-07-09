@@ -35,6 +35,8 @@ func disable_goal_collision(player = 1):
 
 func _process(_delta):
 	if player_one_goal_hitbox.disabled and player_two_goal_hitbox.disabled:
+		timer.paused = true
+		
 		player_one_particles.emitting = true
 		player_two_particles.emitting = true
 		
