@@ -41,6 +41,10 @@ func _process(_delta):
 		if !level_complete_sfx.playing and !played_level_complete_sfx:
 			level_complete_sfx.play()
 			played_level_complete_sfx = true
+			
+			if name == "LevelTen":
+				$HeartAnimation.play("reunion")
+				$Heart.show()
 		
 		level_complete.show()
 	

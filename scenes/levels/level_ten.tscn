@@ -1,0 +1,253 @@
+[gd_scene load_steps=22 format=3 uid="uid://cvi13cykc0hre"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_2civo"]
+[ext_resource type="Texture2D" uid="uid://n4n8kw0mqh6v" path="res://assets/tilesheet.png" id="2_jw4tx"]
+[ext_resource type="PackedScene" uid="uid://bihfuqjcvf5e4" path="res://scenes/goal.tscn" id="3_2wkoq"]
+[ext_resource type="PackedScene" uid="uid://crbyg22usjhey" path="res://scenes/player_one.tscn" id="5_5bh22"]
+[ext_resource type="PackedScene" uid="uid://dpoyfb0mutyc" path="res://scenes/player_two.tscn" id="6_loyw6"]
+[ext_resource type="Theme" uid="uid://dqq77rxoecpnf" path="res://assets/theme.tres" id="8_0sfdx"]
+[ext_resource type="Texture2D" uid="uid://cd40e2011wc63" path="res://assets/heart.png" id="8_x4j4p"]
+[ext_resource type="PackedScene" uid="uid://bqvh3tjsttpgy" path="res://scenes/level_complete.tscn" id="9_o2joj"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ykib7"]
+texture = ExtResource("2_jw4tx")
+texture_region_size = Vector2i(64, 64)
+0:0/next_alternative_id = 2
+0:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+0:4/0 = 0
+0:5/0 = 0
+0:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+1:6/0 = 0
+1:5/0 = 0
+1:4/0 = 0
+1:3/0 = 0
+1:2/0 = 0
+1:1/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+7:1/0 = 0
+6:1/0 = 0
+5:1/0 = 0
+4:1/0 = 0
+3:1/0 = 0
+2:1/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+7:3/0 = 0
+6:3/0 = 0
+5:3/0 = 0
+4:3/0 = 0
+3:3/0 = 0
+2:3/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+7:5/0 = 0
+6:5/0 = 0
+5:5/0 = 0
+4:5/0 = 0
+3:5/0 = 0
+2:5/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+7:7/0 = 0
+6:7/0 = 0
+5:7/0 = 0
+4:7/0 = 0
+3:7/0 = 0
+2:7/0 = 0
+8:0/0 = 0
+8:1/0 = 0
+8:2/0 = 0
+8:3/0 = 0
+8:4/0 = 0
+8:5/0 = 0
+8:6/0 = 0
+8:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_cu3wh"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_ykib7")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qw34v"]
+size = Vector2(680, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iyyux"]
+size = Vector2(20, 640)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_30ccm"]
+size = Vector2(660, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_obv34"]
+size = Vector2(20, 660)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lk1e5"]
+size = Vector2(127, 640)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6fa1u"]
+size = Vector2(127, 640)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_26x61"]
+size = Vector2(126, 255)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7xicc"]
+size = Vector2(386, 127)
+
+[sub_resource type="Animation" id="Animation_g4a8v"]
+resource_name = "reunion"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Heart:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(2, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_hnwnt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Heart:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e7qg2"]
+_data = {
+"RESET": SubResource("Animation_hnwnt"),
+"reunion": SubResource("Animation_g4a8v")
+}
+
+[node name="LevelTen" type="Node2D"]
+script = ExtResource("1_2civo")
+
+[node name="Floor" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_cu3wh")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 458752, 1, 1, 458752, 1, 65537, 458752, 1, 65536, 458752, 1, 2, 0, 0, 9, 458752, 1, 8, 458752, 1, 7, 0, 0, 6, 0, 0, 3, 0, 0, 65539, 0, 0, 65538, 0, 0, 131074, 0, 0, 131075, 0, 0, 131073, 458752, 1, 131072, 458752, 1, 196608, 458752, 1, 196609, 458752, 1, 262145, 458752, 1, 262146, 0, 0, 262147, 0, 0, 196611, 0, 0, 196610, 0, 0, 262144, 458752, 1, 327681, 458752, 1, 327682, 0, 0, 327683, 0, 0, 327680, 458752, 1, 393216, 458752, 1, 458752, 458752, 1, 524288, 458752, 1, 589824, 458752, 1, 589825, 458752, 1, 589826, 458752, 1, 589827, 458752, 1, 524291, 458752, 1, 458755, 0, 0, 393218, 0, 0, 458754, 0, 0, 524290, 458752, 1, 524289, 458752, 1, 458753, 458752, 1, 393217, 458752, 1, 393219, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 458752, 1, 65545, 458752, 1, 131081, 458752, 1, 131080, 458752, 1, 131079, 0, 0, 131078, 0, 0, 196615, 0, 0, 262151, 0, 0, 327687, 0, 0, 393223, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 458752, 1, 524296, 458752, 1, 524297, 458752, 1, 589833, 458752, 1, 589832, 458752, 1, 589831, 458752, 1, 589830, 458752, 1, 524294, 458752, 1, 524295, 458752, 1, 458761, 458752, 1, 589828, 458752, 1, 589829, 458752, 1, 524293, 458752, 1, 524292, 458752, 1, 458756, 0, 0, 458757, 0, 0, 393221, 0, 0, 393220, 0, 0, 327684, 0, 0, 327685, 0, 0, 262148, 0, 0, 262149, 0, 0, 196613, 458752, 1, 131076, 458752, 1, 131077, 458752, 1, 65541, 458752, 1, 65540, 458752, 1, 4, 458752, 1, 5, 458752, 1, 393222, 0, 0, 393224, 458752, 1, 393225, 458752, 1, 327688, 458752, 1, 327689, 458752, 1, 262153, 458752, 1, 262152, 458752, 1, 196616, 458752, 1, 196617, 458752, 1, 327686, 0, 0, 262150, 0, 0, 196614, 0, 0, 196612, 458752, 1)
+
+[node name="PlayerOneGoal" parent="." instance=ExtResource("3_2wkoq")]
+position = Vector2(288, 485)
+
+[node name="PlayerTwoGoal" parent="." instance=ExtResource("3_2wkoq")]
+position = Vector2(352, 486)
+
+[node name="Pathways" type="Node2D" parent="."]
+position = Vector2(450, 332)
+
+[node name="PlayerOne" parent="." instance=ExtResource("5_5bh22")]
+position = Vector2(191, 38)
+
+[node name="PlayerTwo" parent="." instance=ExtResource("6_loyw6")]
+position = Vector2(449, 40)
+
+[node name="Borders" type="CharacterBody2D" parent="."]
+
+[node name="TopBorder" type="CollisionShape2D" parent="Borders"]
+position = Vector2(320, -10)
+shape = SubResource("RectangleShape2D_qw34v")
+
+[node name="LeftBorder" type="CollisionShape2D" parent="Borders"]
+position = Vector2(-10, 320)
+shape = SubResource("RectangleShape2D_iyyux")
+
+[node name="RightBorder" type="CollisionShape2D" parent="Borders"]
+position = Vector2(310, 650)
+shape = SubResource("RectangleShape2D_30ccm")
+
+[node name="BottomBorder" type="CollisionShape2D" parent="Borders"]
+position = Vector2(650, 330)
+shape = SubResource("RectangleShape2D_obv34")
+
+[node name="Left" type="CollisionShape2D" parent="Borders"]
+position = Vector2(63.5, 320)
+shape = SubResource("RectangleShape2D_lk1e5")
+
+[node name="Right" type="CollisionShape2D" parent="Borders"]
+position = Vector2(576.5, 320)
+shape = SubResource("RectangleShape2D_6fa1u")
+
+[node name="Middle" type="CollisionShape2D" parent="Borders"]
+position = Vector2(320, 127.5)
+shape = SubResource("RectangleShape2D_26x61")
+
+[node name="BottomMiddle" type="CollisionShape2D" parent="Borders"]
+position = Vector2(320, 576.5)
+shape = SubResource("RectangleShape2D_7xicc")
+
+[node name="Boxes" type="Node2D" parent="."]
+
+[node name="LevelNumber" type="Label" parent="."]
+offset_left = 11.0
+offset_top = 5.0
+offset_right = 51.0
+offset_bottom = 58.0
+theme = ExtResource("8_0sfdx")
+text = "10"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+autostart = true
+
+[node name="TimeLeft" type="Label" parent="."]
+layout_direction = 3
+offset_left = -634.0
+offset_top = 5.0
+offset_right = -579.0
+offset_bottom = 58.0
+theme = ExtResource("8_0sfdx")
+text = "60"
+horizontal_alignment = 2
+
+[node name="HeartAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_e7qg2")
+}
+
+[node name="Heart" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(319.5, 412.344)
+scale = Vector2(2, 2)
+texture = ExtResource("8_x4j4p")
+
+[node name="LevelComplete" parent="." instance=ExtResource("9_o2joj")]
+visible = false
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 640.0
+offset_bottom = 640.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

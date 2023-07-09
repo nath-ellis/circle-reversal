@@ -1,0 +1,257 @@
+[gd_scene load_steps=22 format=3 uid="uid://dml25kdb2h5ey"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_bj8sr"]
+[ext_resource type="Texture2D" uid="uid://n4n8kw0mqh6v" path="res://assets/tilesheet.png" id="2_522lc"]
+[ext_resource type="PackedScene" uid="uid://bihfuqjcvf5e4" path="res://scenes/goal.tscn" id="3_uqttc"]
+[ext_resource type="PackedScene" uid="uid://ddc48a2uqc38l" path="res://scenes/pathway.tscn" id="4_tbh3s"]
+[ext_resource type="PackedScene" uid="uid://crbyg22usjhey" path="res://scenes/player_one.tscn" id="5_ox60a"]
+[ext_resource type="PackedScene" uid="uid://dpoyfb0mutyc" path="res://scenes/player_two.tscn" id="6_hb8nv"]
+[ext_resource type="PackedScene" uid="uid://wyo024xmo4ob" path="res://scenes/breakable_box.tscn" id="7_memw5"]
+[ext_resource type="Theme" uid="uid://dqq77rxoecpnf" path="res://assets/theme.tres" id="8_yc7q7"]
+[ext_resource type="PackedScene" uid="uid://bqvh3tjsttpgy" path="res://scenes/level_complete.tscn" id="9_7euah"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ykib7"]
+texture = ExtResource("2_522lc")
+texture_region_size = Vector2i(64, 64)
+0:0/next_alternative_id = 2
+0:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+0:4/0 = 0
+0:5/0 = 0
+0:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+1:6/0 = 0
+1:5/0 = 0
+1:4/0 = 0
+1:3/0 = 0
+1:2/0 = 0
+1:1/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+7:1/0 = 0
+6:1/0 = 0
+5:1/0 = 0
+4:1/0 = 0
+3:1/0 = 0
+2:1/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+7:3/0 = 0
+6:3/0 = 0
+5:3/0 = 0
+4:3/0 = 0
+3:3/0 = 0
+2:3/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+7:5/0 = 0
+6:5/0 = 0
+5:5/0 = 0
+4:5/0 = 0
+3:5/0 = 0
+2:5/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+7:7/0 = 0
+6:7/0 = 0
+5:7/0 = 0
+4:7/0 = 0
+3:7/0 = 0
+2:7/0 = 0
+8:0/0 = 0
+8:1/0 = 0
+8:2/0 = 0
+8:3/0 = 0
+8:4/0 = 0
+8:5/0 = 0
+8:6/0 = 0
+8:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_cu3wh"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_ykib7")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qw34v"]
+size = Vector2(680, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iyyux"]
+size = Vector2(20, 640)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_30ccm"]
+size = Vector2(660, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_obv34"]
+size = Vector2(20, 660)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mk8hp"]
+size = Vector2(62.5, 575)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c5sbj"]
+size = Vector2(62, 575)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2lewx"]
+size = Vector2(62.5, 575.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hn61e"]
+size = Vector2(62, 575)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2xcf"]
+size = Vector2(63, 511)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a165e"]
+size = Vector2(66, 62)
+
+[node name="LevelEight" type="Node2D"]
+script = ExtResource("1_bj8sr")
+
+[node name="Floor" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_cu3wh")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 65537, 458752, 1, 65536, 0, 0, 2, 0, 0, 9, 0, 0, 8, 0, 0, 7, 458752, 1, 6, 0, 0, 3, 458752, 1, 65539, 458752, 1, 65538, 0, 0, 131074, 0, 0, 131075, 458752, 1, 131073, 458752, 1, 131072, 0, 0, 196608, 0, 0, 196609, 458752, 1, 262145, 458752, 1, 262146, 0, 0, 262147, 458752, 1, 196611, 458752, 1, 196610, 0, 0, 262144, 0, 0, 327681, 458752, 1, 327682, 0, 0, 327683, 458752, 1, 327680, 0, 0, 393216, 0, 0, 458752, 0, 0, 524288, 0, 0, 589824, 0, 0, 589825, 458752, 1, 589826, 0, 0, 589827, 0, 0, 524291, 458752, 1, 458755, 458752, 1, 393218, 0, 0, 458754, 0, 0, 524290, 0, 0, 524289, 458752, 1, 458753, 458752, 1, 393217, 458752, 1, 393219, 458752, 1, 65542, 0, 0, 65543, 458752, 1, 65544, 0, 0, 65545, 0, 0, 131081, 458752, 1, 131080, 458752, 1, 131079, 458752, 1, 131078, 0, 0, 196615, 458752, 1, 262151, 458752, 1, 327687, 458752, 1, 393223, 458752, 1, 458758, 0, 0, 458759, 458752, 1, 458760, 0, 0, 524296, 0, 0, 524297, 458752, 1, 589833, 458752, 1, 589832, 0, 0, 589831, 0, 0, 589830, 0, 0, 524294, 0, 0, 524295, 458752, 1, 458761, 458752, 1, 589828, 0, 0, 589829, 458752, 1, 524293, 458752, 1, 524292, 0, 0, 458756, 0, 0, 458757, 458752, 1, 393221, 458752, 1, 393220, 0, 0, 327684, 0, 0, 327685, 458752, 1, 262148, 0, 0, 262149, 458752, 1, 196613, 458752, 1, 131076, 0, 0, 131077, 458752, 1, 65541, 458752, 1, 65540, 0, 0, 4, 0, 0, 5, 0, 0, 393222, 0, 0, 393224, 0, 0, 393225, 458752, 1, 327688, 0, 0, 327689, 458752, 1, 262153, 458752, 1, 262152, 0, 0, 196616, 0, 0, 196617, 458752, 1, 327686, 0, 0, 262150, 0, 0, 196614, 0, 0, 196612, 0, 0)
+
+[node name="PlayerOneGoal" parent="." instance=ExtResource("3_uqttc")]
+position = Vector2(609, 99)
+
+[node name="PlayerTwoGoal" parent="." instance=ExtResource("3_uqttc")]
+position = Vector2(542, 224)
+
+[node name="Pathways" type="Node2D" parent="."]
+position = Vector2(450, 332)
+
+[node name="Pathway1" parent="Pathways" instance=ExtResource("4_tbh3s")]
+position = Vector2(-226, 276)
+
+[node name="Pathway2" parent="Pathways" instance=ExtResource("4_tbh3s")]
+position = Vector2(30, 276)
+
+[node name="Pathway3" parent="Pathways" instance=ExtResource("4_tbh3s")]
+position = Vector2(94, 19)
+
+[node name="Pathway4" parent="Pathways" instance=ExtResource("4_tbh3s")]
+position = Vector2(-290, -108)
+
+[node name="Pathway5" parent="Pathways" instance=ExtResource("4_tbh3s")]
+position = Vector2(-418, 84)
+
+[node name="PlayerOne" parent="." instance=ExtResource("5_ox60a")]
+position = Vector2(33, 611)
+
+[node name="PlayerTwo" parent="." instance=ExtResource("6_hb8nv")]
+position = Vector2(546, 32)
+
+[node name="Borders" type="CharacterBody2D" parent="."]
+
+[node name="TopBorder" type="CollisionShape2D" parent="Borders"]
+position = Vector2(320, -10)
+shape = SubResource("RectangleShape2D_qw34v")
+
+[node name="LeftBorder" type="CollisionShape2D" parent="Borders"]
+position = Vector2(-10, 320)
+shape = SubResource("RectangleShape2D_iyyux")
+
+[node name="RightBorder" type="CollisionShape2D" parent="Borders"]
+position = Vector2(310, 650)
+shape = SubResource("RectangleShape2D_30ccm")
+
+[node name="BottomBorder" type="CollisionShape2D" parent="Borders"]
+position = Vector2(650, 330)
+shape = SubResource("RectangleShape2D_obv34")
+
+[node name="VerticleOne" type="CollisionShape2D" parent="Borders"]
+position = Vector2(95.75, 352.5)
+shape = SubResource("RectangleShape2D_mk8hp")
+
+[node name="VerticleTwo" type="CollisionShape2D" parent="Borders"]
+position = Vector2(224, 287.5)
+shape = SubResource("RectangleShape2D_c5sbj")
+
+[node name="VerticleThree" type="CollisionShape2D" parent="Borders"]
+position = Vector2(351.75, 352.25)
+shape = SubResource("RectangleShape2D_2lewx")
+
+[node name="VerticleFour" type="CollisionShape2D" parent="Borders"]
+position = Vector2(480, 287.5)
+shape = SubResource("RectangleShape2D_hn61e")
+
+[node name="VerticleFive" type="CollisionShape2D" parent="Borders"]
+position = Vector2(608.5, 384.5)
+shape = SubResource("RectangleShape2D_d2xcf")
+
+[node name="HorizontalOne" type="CollisionShape2D" parent="Borders"]
+position = Vector2(544, 160)
+shape = SubResource("RectangleShape2D_a165e")
+
+[node name="Boxes" type="Node2D" parent="."]
+
+[node name="BreakableBox1" parent="Boxes" instance=ExtResource("7_memw5")]
+position = Vector2(95, 34)
+
+[node name="BreakableBox2" parent="Boxes" instance=ExtResource("7_memw5")]
+position = Vector2(350, 35)
+
+[node name="BreakableBox3" parent="Boxes" instance=ExtResource("7_memw5")]
+position = Vector2(541, 478)
+
+[node name="BreakableBox4" parent="Boxes" instance=ExtResource("7_memw5")]
+position = Vector2(290, 484)
+
+[node name="BreakableBox5" parent="Boxes" instance=ExtResource("7_memw5")]
+position = Vector2(413, 354)
+
+[node name="BreakableBox6" parent="Boxes" instance=ExtResource("7_memw5")]
+position = Vector2(161, 419)
+
+[node name="BreakableBox7" parent="Boxes" instance=ExtResource("7_memw5")]
+position = Vector2(288, 226)
+
+[node name="LevelNumber" type="Label" parent="."]
+offset_left = 11.0
+offset_top = 5.0
+offset_right = 51.0
+offset_bottom = 58.0
+theme = ExtResource("8_yc7q7")
+text = "8"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 35.0
+one_shot = true
+autostart = true
+
+[node name="TimeLeft" type="Label" parent="."]
+layout_direction = 3
+offset_left = -634.0
+offset_top = 5.0
+offset_right = -579.0
+offset_bottom = 58.0
+theme = ExtResource("8_yc7q7")
+text = "60"
+horizontal_alignment = 2
+
+[node name="LevelComplete" parent="." instance=ExtResource("9_7euah")]
+visible = false
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 640.0
+offset_bottom = 640.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

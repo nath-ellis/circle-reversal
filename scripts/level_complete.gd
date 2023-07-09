@@ -25,7 +25,7 @@ func _on_next_pressed():
 		9:
 			get_tree().change_scene_to_file("res://scenes/levels/level_ten.tscn")
 		10:
-			pass  # TODO: Cutscene/victory animation after level 10
+			pass
 
 
 func _on_exit_pressed():
