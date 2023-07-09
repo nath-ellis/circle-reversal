@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://ce7703mrm0jyw"]
+
+[ext_resource type="Theme" uid="uid://dqq77rxoecpnf" path="res://assets/theme.tres" id="1_wdp3w"]
+[ext_resource type="FontFile" uid="uid://ddhkcn6evvmag" path="res://assets/just_sans_bold.otf" id="2_2y8l0"]
+[ext_resource type="Script" path="res://scripts/game_over.gd" id="2_ugrwq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rslsj"]
+font = ExtResource("2_2y8l0")
+font_size = 96
+font_color = Color(1, 0.384314, 0.356863, 1)
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_wdp3w")
+script = ExtResource("2_ugrwq")
+
+[node name="LevelComplete" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -266.0
+offset_top = 93.0
+offset_right = 267.0
+offset_bottom = 214.0
+grow_horizontal = 2
+text = "Game Over"
+label_settings = SubResource("LabelSettings_rslsj")
+horizontal_alignment = 1
+
+[node name="Menu" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.5
+offset_top = -33.0
+offset_right = 65.5
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Menu"
+
+[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]

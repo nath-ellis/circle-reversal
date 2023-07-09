@@ -13,6 +13,8 @@ extends Node
 @onready var pathways = $Pathways
 @onready var level_complete = $LevelComplete
 @onready var level_complete_sfx = $LevelComplete/LevelCompleteSFX
+@onready var timer = $Timer
+@onready var time_left_label = $TimeLeft
 var block = false  # Prevent player movement while swapping positions
 var played_level_complete_sfx = false
 
@@ -41,6 +43,8 @@ func _process(_delta):
 			played_level_complete_sfx = true
 		
 		level_complete.show()
+	
+	time_left_label.text = str(int(timer.time_left))
 
 
 func _physics_process(_delta):
@@ -63,3 +67,7 @@ func _physics_process(_delta):
 		player_two.global_position = player_one_pos
 	else:
 		block = false
+
+
+func _on_timer_timeout():
+	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
