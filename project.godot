@@ -10,9 +10,10 @@ config_version=5
 
 [application]
 
-config/name="GMTK2023"
+config/name="Circle Reversal"
 run/main_scene="res://scenes/menu.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
+boot_splash/bg_color=Color(1, 1, 1, 1)
 config/icon="res://icon.svg"
 
 [autoload]
