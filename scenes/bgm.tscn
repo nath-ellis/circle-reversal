@@ -5,7 +5,7 @@
 
 [node name="BGM" type="AudioStreamPlayer2D"]
 stream = ExtResource("1_te15p")
-volume_db = 15.0
+volume_db = 10.0
 autoplay = true
 script = ExtResource("2_q8pk6")
 
