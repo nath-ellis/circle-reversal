@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://btnasdt0svsf0"]
+
+[ext_resource type="AudioStream" uid="uid://dffqftb58gcvu" path="res://assets/sfx/cave_theme_b.mp3" id="1_te15p"]
+[ext_resource type="Script" path="res://scripts/bgm.gd" id="2_q8pk6"]
+
+[node name="BGM" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_te15p")
+volume_db = 15.0
+autoplay = true
+script = ExtResource("2_q8pk6")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

@@ -12,7 +12,9 @@ extends Node
 @onready var player_swoosh_sfx = $PlayerOne/Swoosh
 @onready var pathways = $Pathways
 @onready var level_complete = $LevelComplete
+@onready var level_complete_sfx = $LevelComplete/LevelCompleteSFX
 var block = false  # Prevent player movement while swapping positions
+var played_level_complete_sfx = false
 
 
 func enable_goal_collision(player = 1):
@@ -33,6 +35,10 @@ func _process(_delta):
 	if player_one_goal_hitbox.disabled and player_two_goal_hitbox.disabled:
 		player_one_particles.emitting = true
 		player_two_particles.emitting = true
+		
+		if !level_complete_sfx.playing and !played_level_complete_sfx:
+			level_complete_sfx.play()
+			played_level_complete_sfx = true
 		
 		level_complete.show()
 
